@@ -33,4 +33,14 @@ extension StyleObject where Base: UIScrollView {
         base.alwaysBounceHorizontal = always
         return self
     }
+
+    @discardableResult public func contentInset(_ inset: UIEdgeInsets) -> StyleObject {
+        base.contentInset = inset
+        return self
+    }
+
+    @discardableResult public func isDelaysContentTouchesEnabled(_ enabled: Bool = true) -> StyleObject {
+        base.delaysContentTouches = enabled
+        return self
+    }
 }
