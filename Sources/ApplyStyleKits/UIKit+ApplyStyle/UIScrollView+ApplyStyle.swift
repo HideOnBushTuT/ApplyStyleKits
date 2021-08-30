@@ -23,4 +23,14 @@ extension StyleObject where Base: UIScrollView {
         base.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
         return self
     }
+
+    @discardableResult public func alwaysBounceVertical(_ always: Bool = false) -> StyleObject {
+        base.alwaysBounceVertical = always
+        return self
+    }
+
+    @discardableResult public func alwaysBounceHorizontal(_ always: Bool = false) -> StyleObject {
+        base.alwaysBounceHorizontal = always
+        return self
+    }
 }
