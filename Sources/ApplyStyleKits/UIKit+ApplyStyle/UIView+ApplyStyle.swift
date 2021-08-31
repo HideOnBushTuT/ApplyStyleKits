@@ -102,7 +102,7 @@ extension StyleObject where Base: UIView {
         base.sendSubviewToBack(view)
         return self
     }
-    
+
     @discardableResult public func didAddSubview(_ subview: UIView) -> StyleObject {
         base.didAddSubview(subview)
         return self
@@ -238,6 +238,12 @@ extension StyleObject where Base: UIView {
 
     @discardableResult public func tintAdjustmentMode(_ tintAdjustmentMode: UIView.TintAdjustmentMode) -> StyleObject {
         base.tintAdjustmentMode = tintAdjustmentMode
+        return self
+    }
+
+    @discardableResult public func cornerRadius(_ radius: CGFloat) -> StyleObject {
+        base.layer.masksToBounds = true
+        base.layer.cornerRadius = abs(CGFloat(Int(radius * 100)) / 100)
         return self
     }
 }
